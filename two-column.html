@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .container {
+      width: 70%;
+      margin: 0 auto;
+      border: 1px solid black;
+      min-width: 1000px;
+    }
+
+    /* 清除 浮动 的影响 */
+    .container::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .left {
+      width: 300px;
+      background-color: orange;
+      float: left;
+      margin-right: 20px;
+    }
+
+    /* .right {
+      width: 300px;
+      background-color: orange;
+      float: right;
+      margin-left: 20px;
+    } */
+
+    .main {
+      background-color: aquamarine;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo, laboriosam possimus mollitia illo odit modi, quos similique quae voluptatum nemo eius porro! Maiores expedita accusantium quas neque porro ratione tempore necessitatibus inventore, magnam saepe impedit, nisi dolorem eveniet aut iusto ipsa assumenda error, odio aliquam quaerat ad incidunt eaque mollitia iste? Maxime molestias sunt iste facere! Quae quaerat enim minima illum ea fugiat deserunt earum? Nihil quis necessitatibus explicabo accusamus ea, voluptatibus ut optio maiores vero rerum reprehenderit voluptates ipsum? Dicta optio dignissimos, inventore, veritatis delectus magnam qui nobis hic minus nostrum iste necessitatibus sequi nihil quaerat itaque vitae.
+    </div>
+    <!-- <div class="right">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo, laboriosam possimus mollitia illo odit modi, quos similique quae voluptatum nemo eius porro! Maiores expedita accusantium quas neque porro ratione tempore necessitatibus inventore, magnam saepe impedit, nisi dolorem eveniet aut iusto ipsa assumenda error, odio aliquam quaerat ad incidunt eaque mollitia iste? Maxime molestias sunt iste facere! Quae quaerat enim minima illum ea fugiat deserunt earum? Nihil quis necessitatibus explicabo accusamus ea, voluptatibus ut optio maiores vero rerum reprehenderit voluptates ipsum? Dicta optio dignissimos, inventore, veritatis delectus magnam qui nobis hic minus nostrum iste necessitatibus sequi nihil quaerat itaque vitae.
+    </div> -->
+    <div class="main">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione neque praesentium fuga sint soluta repellat quam, placeat architecto quia sequi saepe tempora nostrum modi! Optio quis ipsum expedita necessitatibus quos illo maxime? Commodi quasi accusamus officia libero in ab, cupiditate ex culpa harum consequatur praesentium similique. Laboriosam alias enim ab at necessitatibus nesciunt, nostrum illo impedit eveniet quibusdam quasi suscipit facilis odio, architecto in ducimus nulla sapiente, quo vero nam? Illum beatae quod praesentium cum repudiandae. Laborum, vero nostrum dicta beatae officia deleniti pariatur non voluptate nesciunt consequuntur accusantium enim nulla sunt dolor maiores cum adipisci voluptatem numquam excepturi amet cupiditate eveniet blanditiis? Accusantium inventore aut placeat, quae id hic maxime architecto sunt rerum, quidem explicabo similique ratione officiis corporis accusamus nam dolore impedit excepturi esse. Placeat hic eius fuga officiis, tempora blanditiis deserunt rerum pariatur quia unde quaerat tenetur doloribus maiores voluptatum a ducimus maxime? Officia aperiam illum alias, sint in laudantium cumque. Nostrum architecto quam laudantium ea reprehenderit sapiente eveniet, dignissimos earum corrupti unde, modi fugiat odit eligendi nisi magnam. Eveniet unde doloremque reiciendis architecto officia. Nobis temporibus facilis nesciunt ipsa corporis adipisci minima, rerum vero magnam quam hic consectetur laboriosam est, consequatur ullam quaerat quae eaque modi culpa totam autem velit sint eos! Sit a voluptatem excepturi dolorum tenetur officia odit eum magni qui, nulla dolorem enim totam deserunt corrupti nostrum culpa quos beatae necessitatibus. Voluptas voluptates cumque vero nemo esse pariatur totam adipisci quos! Nostrum ipsam eligendi velit, ipsum dolorem asperiores quis maiores error fugiat ab illum placeat reprehenderit corporis id nam animi unde, voluptates odio amet dicta dignissimos atque ipsa deleniti quod. Incidunt illum magnam velit dolorum unde ea ad illo quo atque tempore iusto reprehenderit nam, eum totam debitis aperiam, deserunt nesciunt pariatur odit. Quis ducimus laborum quibusdam voluptates sapiente quae a illum vitae?
+    </div>
+  </div>
+</body>
+</html>
