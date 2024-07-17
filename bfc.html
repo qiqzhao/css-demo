@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* 6 */
+      /* body {
+        display: flex;
+      } */
+
+      .outer {
+        width: 400px;
+        background-color: gray;
+
+        /* BFC */
+        /* 1 */
+        /* float: left; */
+
+        /* 2 */
+        /* position: absolute; */
+
+        /* 3 */
+        /* overflow: auto ; */
+
+        /* 4 */
+        /* display: inline-block; */
+
+        /* 5*/
+        /* display: flow-root; */
+
+        /* 7 */
+        /* column-count: 1; */
+
+        /* 8 */
+        /* display: table; */
+      }
+
+      .inner {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+      }
+
+      .box1 {
+        background-color: burlywood;
+      }
+
+      .box2 {
+        background-color: orange;
+      }
+
+      .box3 {
+        background-color: greenyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="inner box1"></div>
+      <div class="inner box2"></div>
+      <div class="inner box3"></div>
+    </div>
+  </body>
+</html>
