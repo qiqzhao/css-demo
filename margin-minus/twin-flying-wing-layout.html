@@ -11,33 +11,46 @@
         padding: 0;
       }
 
+      .box {
+        /* 清除浮动 */
+        overflow: hidden;
+      }
       .item {
+        float: left;
       }
 
       .container {
+        width: 100%;
         background-color: slategray;
       }
       .content {
         height: 200px;
         background-color: brown;
+        /* 两边预留空间 */
+        margin-left: 200px;
+        margin-right: 150px;
       }
       .left-item {
         width: 200px;
         background-color: violet;
+        margin-left: -100%;
       }
 
       .right-item {
         width: 150px;
         background-color: burlywood;
+        margin-left: -150px;
       }
     </style>
   </head>
   <body>
-    <div class="container item">
-      <div class="content">main content</div>
-    </div>
+    <div class="box">
+      <div class="container item">
+        <div class="content">main content</div>
+      </div>
 
-    <div class="left-item item">left item</div>
-    <div class="right-item item">right item</div>
+      <div class="left-item item">left item</div>
+      <div class="right-item item">right item</div>
+    </div>
   </body>
 </html>
