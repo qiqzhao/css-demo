@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>拖拽</title>
+    <style>
+      div {
+        width: 750px;
+        height: 800px;
+        border: 1px solid #000;
+        margin-right: 100px;
+        padding: 10px;
+        float: left;
+      }
+
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="aa" ondragover="dragover(event)" ondrop="drop(event)">
+      <h1>拖动照片到方框中：</h1>
+    </div>
+    <img
+      id="img"
+      src="./logo.png"
+      alt=""
+      draggable="true"
+    />
+
+    <script>
+      let img = document.getElementById("img");
+      img.addEventListener("dragstart", (event) => {
+        console.log(event.target.id);
+        event.dataTransfer.setData("Text", event.target.id);
+      });
+
+      let drop = (event) => {
+        let data = event.dataTransfer.getData("Text");
+        let img = document.getElementById(data);
+        event.currentTarget.appendChild(img);
+      };
+
+      let dragover = (event) => {
+        event.preventDefault();
+      };
+    </script>
+  </body>
+</html>
