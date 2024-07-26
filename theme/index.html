@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>换肤</title>
+    <style>
+      body {
+        --background-color: bisque;
+        background-color: var(--background-color);
+      }
+
+      body.dark {
+        --background-color: black;
+      }
+
+      .switch {
+        margin: 150px auto;
+        width: 80px;
+      }
+
+      .switch-input {
+        display: none;
+      }
+
+      .switch-label {
+        display: block;
+        width: 80px;
+        height: 40px;
+        border: 2px solid #ccc;
+        border-radius: 20px;
+        padding: 2px;
+        box-sizing: border-box;
+      }
+
+      .switch-label::after {
+        display: block;
+        content: "";
+        width: 50%;
+        height: 100%;
+        position: relative;
+        left: 0;
+        background-color: gray;
+        border-radius: 30px;
+        transition: all 0.3s ease-in;
+      }
+
+      .switch-input:checked + .switch-label::after {
+        left: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="switch">
+      <input type="checkbox" class="switch-input" id="switch-input" />
+      <label for="switch-input" class="switch-label"></label>
+    </div>
+
+    <script>
+      document
+        .querySelector("#switch-input")
+        .addEventListener("click", function () {
+          document.body.classList.toggle("dark");
+        });
+    </script>
+  </body>
+</html>
