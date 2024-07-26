@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .pagination {
+        margin-top: 300px;
+        text-align: center;
+      }
+
+      a {
+        width: 36px;
+        height: 36px;
+        border: 1px solid #ccc;
+        display: inline-block;
+        text-decoration: none;
+        font-size: 14px;
+        color: #000;
+        line-height: 36px;
+      }
+
+      .page {
+        width: 80px;
+      }
+
+      .active {
+        background-color: #ccc;
+      }
+
+      .input {
+        width: 40px;
+        height: 30px;
+        border: 1px solid #ccc;
+        outline: none;
+      }
+
+      .confirm-btn {
+        width: 50px;
+        height: 36px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pagination">
+      <a href="" class="page">&lt;&lt;上一页</a>
+      <a href="">1</a>
+      <a href="" class="active">2</a>
+      <a href="">3</a>
+      <a href="">4</a>
+      <a href="">5</a>
+      <a href="">6</a>
+      <a href="">...</a>
+      <a href="" class="page">&gt;&gt;下一页</a>
+      到第
+      <input type="text" class="input" />
+      页
+      <button class="confirm-btn">确定</button>
+    </div>
+  </body>
+</html>
