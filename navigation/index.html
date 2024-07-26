@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>navigation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #333;
+        color: #fff;
+      }
+
+      nav {
+        width: 350px;
+        height: 30px;
+        line-height: 30px;
+        margin: 50px auto;
+        box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.7);
+        border-radius: 5px;
+      }
+
+      li:hover h4:hover {
+        cursor: pointer;
+        border-radius: 3px;
+      }
+
+      nav ul {
+        width: 100%;
+        list-style: none;
+      }
+
+      .nav-item {
+        float: left;
+        width: 70px;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      .sub-menu {
+        box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.7);
+        border-radius: 3px;
+        display: none;
+      }
+
+      .sub-menu li:not(:first-child) {
+        border-top: 1px dashed #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li class="nav-item">
+          <h4>HTML5</h4>
+          <ul class="sub-menu">
+            <li class="menu-item">HTML5</li>
+            <li class="menu-item">HTML5</li>
+            <li class="menu-item">HTML5</li>
+            <li class="menu-item">HTML5</li>
+            <li class="menu-item">HTML5</li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <h4>CSS3</h4>
+          <ul class="sub-menu">
+            <li class="menu-item">CSS3</li>
+            <li class="menu-item">CSS3</li>
+            <li class="menu-item">CSS3</li>
+            <li class="menu-item">CSS3</li>
+            <li class="menu-item">CSS3</li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <h4>JQUERY</h4>
+          <ul class="sub-menu">
+            <li class="menu-item">JQUERY</li>
+            <li class="menu-item">JQUERY</li>
+            <li class="menu-item">JQUERY</li>
+            <li class="menu-item">JQUERY</li>
+            <li class="menu-item">JQUERY</li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <h4>JS</h4>
+          <ul class="sub-menu">
+            <li class="menu-item">JS</li>
+            <li class="menu-item">JS</li>
+            <li class="menu-item">JS</li>
+            <li class="menu-item">JS</li>
+            <li class="menu-item">JS</li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <h4>React</h4>
+          <ul class="sub-menu">
+            <li class="menu-item">React</li>
+            <li class="menu-item">React</li>
+            <li class="menu-item">React</li>
+            <li class="menu-item">React</li>
+            <li class="menu-item">React</li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <script>
+      let navItemTitle = document.querySelectorAll("h4");
+      let menuItem = document.querySelectorAll(".menu-item");
+
+      let navItem = document.querySelectorAll(".nav-item");
+      let subMenu = document.querySelectorAll(".sub-menu");
+
+      for (let i = 0; i < navItem.length; i++) {
+        navItem[i].onmouseover = function () {
+          subMenu[i].style.display = "block";
+        };
+        navItem[i].onmouseout = () => {
+          subMenu[i].style.display = "none";
+        };
+      }
+
+      let changeBackgroundColor = (arr) => {
+        for (let i = 0; i < arr.length; i++) {
+          arr[i].onmouseover = function () {
+            this.style.backgroundColor = "red";
+          };
+          arr[i].onmouseout = function () {
+            this.style.backgroundColor = "";
+          };
+        }
+      };
+
+      changeBackgroundColor(navItemTitle);
+      changeBackgroundColor(menuItem);
+    </script>
+  </body>
+</html>
