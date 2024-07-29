@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS实现拖拽</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .item {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        border-radius: 5px;
+        position: absolute;
+        top: 300px;
+        left: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="item"></div>
+
+    <script>
+      let div = document.querySelector(".item");
+      let flag = false;
+
+      div.addEventListener("mousedown", function (e) {
+        flag = true;
+        let x = e.offsetX;
+        let y = e.offsetY;
+
+        document.addEventListener("mousemove", function (e) {
+          let _h = window.innerHeight - div.offsetHeight;
+          let _w = window.innerWidth - div.offsetWidth;
+
+          let divLeft = e.clientX - x;
+          let divTop = e.clientY - y;
+
+          divTop = Math.min(Math.max(0, divTop), _h)
+          divLeft = Math.min(Math.max(0, divLeft), _w)
+          if (flag) {
+            div.style.top = divTop + "px";
+            div.style.left = divLeft + "px";
+          }
+        });
+      });
+
+      div.addEventListener("mouseup", function () {
+        flag = false;
+      });
+    </script>
+  </body>
+</html>
