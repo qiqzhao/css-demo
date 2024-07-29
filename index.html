@@ -3,11 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="./assets/2.jpeg"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="./assets/2.jpeg" type="image/x-icon" />
     <title>css-demo</title>
 
     <style>
@@ -15,6 +11,7 @@
         margin: 0;
         background-color: #fafafa;
         padding: 16px;
+        --column: 4;
       }
 
       a {
@@ -28,7 +25,7 @@
         border-radius: 4px;
         box-shadow: 0 17px 37px -12px rgba(104, 104, 104, 0.24);
         border: 1px solid #f0f0f0;
-        transition: .2s ease-in;
+        transition: 0.2s ease-in;
       }
 
       a:hover {
@@ -38,13 +35,21 @@
 
       .container {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(var(--column), 1fr);
         gap: 16px;
+      }
+
+      /* 小屏幕样式 */
+      @media (max-width: 767px) {
+        body {
+          --column: 1:
+        }
       }
 
       .item {
         border: 1px solid transparent;
         display: flex;
+        min-width: 220px;
       }
     </style>
   </head>
@@ -52,28 +57,33 @@
     <h1>css-demo</h1>
     <div class="container">
       <div class="item">
-        <a href="./drag/index.html">拖拽</a>
+        <a href="./drag/index.html" target="_blank">1. 拖拽</a>
       </div>
       <div class="item">
-        <a href="./pagination/index.html">分页</a>
+        <a href="./pagination/index.html" target="_blank">2. 分页</a>
       </div>
       <div class="item">
-        <a href="./navigation/index.html">导航 JS+CSS 版</a>
+        <a href="./navigation/index.html" target="_blank">3. 导航 JS+CSS 版</a>
       </div>
       <div class="item">
-        <a href="./navigation/index2.html">导航纯 CSS 版</a>
+        <a href="./navigation/index2.html" target="_blank">4. 导航纯 CSS 版</a>
       </div>
       <div class="item">
-        <a href="./photo-galery/index.html">旋转木马照片墙</a>
+        <a href="./photo-galery/index.html" target="_blank"
+          >5. 旋转木马照片墙</a
+        >
       </div>
       <div class="item">
-        <a href="./theme/index.html">一键切换主题暗黑模式</a>
+        <a href="./theme/index.html" target="_blank">6. 一键切换主题暗黑模式</a>
       </div>
       <div class="item">
-        <a href="./waterfall/index.html">瀑布效果</a>
+        <a href="./waterfall/index.html" target="_blank">7. 瀑布效果</a>
       </div>
       <div class="item">
-        <a href="./drag-drop/index.html">JS实现拖拽</a>
+        <a href="./drag-drop/index.html" target="_blank">8. JS实现拖拽</a>
+      </div>
+      <div class="item">
+        <a href="./dice-bone/index.html" target="_blank">9. 骰子</a>
       </div>
     </div>
   </body>
