@@ -1,19 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-  <div>
-    <div>
-      <a href="./photo-galery/index.html">旋转木马照片墙</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        margin: 0;
+        background-color: #fafafa;
+        padding: 16px;
+      }
+
+      a {
+        list-style: none;
+        text-decoration: none;
+        color: #000;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+
+      .item {
+        border: 1px solid transparent;
+        border-radius: 4px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        box-shadow: 0 17px 37px -12px rgba(104, 104, 104, 0.24);
+        color: #444;
+        transition: 0.2s;
+      }
+
+      .item:hover {
+        background-color: steelblue;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>css-demo</h1>
+    <div class="container">
+      <div class="item">
+        <a href="./drag/index.html">拖拽</a>
+      </div>
+      <div class="item">
+        <a href="./pagination/index.html">分页</a>
+      </div>
+      <div class="item">
+        <a href="./navigation/index.html">导航 JS+CSS 版</a>
+      </div>
+      <div class="item">
+        <a href="./navigation/index2.html">导航纯 CSS 版</a>
+      </div>
+      <div class="item">
+        <a href="./photo-galery/index.html">旋转木马照片墙</a>
+      </div>
+      <div class="item">
+        <a href="./theme/index.html">一键切换主题暗黑模式</a>
+      </div>
     </div>
-    <div>
-      <a href="./theme/index.html">一键切换主题暗黑模式</a>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
