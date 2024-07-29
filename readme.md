@@ -1,13 +1,5 @@
-### demo
+### css-demo
 
-[拖拽](./drag/index.html)
+css小练习
 
-[分页组件](./pagination/index.html)
-
-[margin为负](./margin-minus)
-
-[换肤](./theme/index.html)
-
-[导航](./navigation/)
-
-[照片墙](./photo-galery/)
+[在线预览](https://qiqzhao.github.io/css-demo/)
