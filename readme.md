@@ -9,3 +9,5 @@
 [换肤](./theme/index.html)
 
 [导航](./navigation/)
+
+[照片墙](./photo-galery/)

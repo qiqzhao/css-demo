@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>照片墙</title>
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+      }
+
+      .pic {
+        margin-top: 200px;
+        width: 350px;
+        height: 200px;
+        display: flex;
+        transform-style: preserve-3d;
+        perspective: 1500px;
+        animation: action 20s linear infinite;
+      }
+
+      @keyframes action {
+        from {
+          transform: rotateY(0deg);
+        }
+        to {
+          transform: rotateY(360deg);
+        }
+      }
+
+      .pic:hover {
+        cursor: pointer;
+        animation-play-state: paused;
+      }
+
+      img {
+        width: 350px;
+        height: 200px;
+        position: absolute;
+        -webkit-box-reflect: below 15px linear-gradient(transparent, 10%, rgba(255,255,255, .3) );
+      }
+
+      .pic img:nth-child(1) {
+        transform: translateZ(500px);
+      }
+
+      .pic img:nth-child(2) {
+        transform: rotateY(60deg) translateZ(500px);
+      }
+      .pic img:nth-child(3) {
+        transform: rotateY(120deg) translateZ(500px);
+      }
+      .pic img:nth-child(4) {
+        transform: rotateY(180deg) translateZ(500px);
+      }
+      .pic img:nth-child(5) {
+        transform: rotateY(240deg) translateZ(500px);
+      }
+      .pic img:nth-child(6) {
+        transform: rotateY(300deg) translateZ(500px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pic">
+      <img src="./1.JPG" alt="" />
+      <img src="./2.jpeg" alt="" />
+      <img src="./3.PNG" alt="" />
+      <img src="./4.PNG" alt="" />
+      <img src="./5.PNG" alt="" />
+      <img src="./6.PNG" alt="" />
+    </div>
+  </body>
+</html>
