@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图片放大镜</title>
+
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 199, 211, 0.5);
+      }
+
+      img {
+        display: block;
+      }
+
+      #main {
+        width: 500px;
+        box-shadow: 0 0 20xp rgba(0, 0, 0, 0.4);
+        position: relative;
+        overflow: hidden;
+      }
+
+      #mirror {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      #mirror img {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <img src="../assets/1.JPG" width="100%" />
+      <div id="mirror">
+        <img src="../assets/1.JPG" />
+      </div>
+    </div>
+
+    <script>
+      let main = document.querySelector("#main");
+      let mirror = document.querySelector("#mirror");
+      let img = document.querySelector("#mirror img");
+
+      main.addEventListener("mousemove", (e) => {
+        let x_left = e.clientX - main.offsetLeft;
+        let y_top = e.clientY - main.offsetTop;
+        // let left = main.offsetLeft;
+        // let top = main.offsetTop;
+
+        mirror.style.left = x_left - mirror.offsetWidth / 2 + "px";
+        mirror.style.top = y_top - mirror.offsetHeight / 2 + "px";
+
+        let mirrorImgLeft =
+          (img.offsetWidth / main.offsetWidth) * x_left -
+          mirror.offsetWidth / 2;
+        let mirrorImgTop =
+          (img.offsetHeight / main.offsetHeight) * y_top -
+          mirror.offsetHeight / 2;
+
+        img.style.left = -mirrorImgLeft + "px";
+        img.style.top = -mirrorImgTop + "px";
+      });
+    </script>
+  </body>
+</html>
