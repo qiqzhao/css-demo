@@ -1,0 +1,99 @@
+body {
+  --width: 400px;
+  --height: 260px;
+  --pluzzle-width: 80px;
+  --pluzzle-height: 80px;
+  --moved: 0px;
+
+  background-color: steelblue;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#captcha {
+  width: var(--width);
+  height: var(--height);
+  background-image: url(../assets/1.JPG);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#captcha::before,
+#captcha::after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: inherit;
+  height: inherit;
+  background-image: inherit;
+  background-size: inherit;
+  background-position: inherit;
+
+  clip-path: inset(
+    calc((var(--height) - var(--pluzzle-height)) / 2)
+      calc((var(--width) - var(--pluzzle-width)) / 2)
+      calc((var(--height) - var(--pluzzle-height)) / 2)
+      calc((var(--width) - var(--pluzzle-width)) / 2)
+  );
+}
+
+#captcha::after {
+  transform: translateX(
+    clamp(
+      calc(var(--width) * -1),
+      calc((var(--width) * -1 + var(--moved))),
+      calc(var(--pluzzle-width) * 2)
+    )
+  );
+}
+
+#captcha:active::after {
+  transition: none;
+}
+
+#captcha::before {
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: multiply;
+}
+
+#handle {
+  height: 30px;
+  width: calc(var(--width) * 2 - var(--pluzzle-width) * 2);
+  border-radius: 18px;
+  background-color: #eee;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.2);
+  border: 3px solid #ccc;
+  position: absolute;
+  bottom: -50px;
+  right: 0px;
+}
+
+#handle span {
+  display: block;
+  width: var(--pluzzle-width);
+  height: inherit;
+  border-radius: inherit;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: move;
+  transform: translateX(
+    clamp(0px, var(--moved), calc(var(--width) + var(--pluzzle-width) * 2))
+  );
+  transition: 0.25s all ease-in-out;
+}
+
+#handle span {
+  transition: none;
+}
+
+#captcha.passed::before,
+#captcha.passed::after,
+#captcha.passed #handle {
+  opacity: 0;
+}
