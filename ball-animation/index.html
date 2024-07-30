@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>弹性球</title>
+
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .bounceBall {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .ball {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(tomato, red);
+        border-radius: 50%;
+        animation: ballAnimation 2s infinite;
+      }
+
+      @keyframes ballAnimation {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-150px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .shadow {
+        width: 55px;
+        height: 20px;
+        background-color: #000;
+        border-radius: 100%;
+        margin-top: -10px;
+        animation: shadowAnimation 2s infinite;
+      }
+
+      @keyframes shadowAnimation {
+        0% {
+          opacity: .2;
+          transform: scale(.75);
+        }
+        50% {
+          opacity: 0.05;
+          transform: scale(1.1);
+        }
+        100% {
+          opacity: .2;
+          transform: scale(.75);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bounceBall">
+      <div class="ball"></div>
+      <div class="shadow"></div>
+    </div>
+  </body>
+</html>

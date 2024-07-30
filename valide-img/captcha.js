@@ -24,7 +24,7 @@ window.addEventListener("mousemove", (e) => {
 window.addEventListener("mouseup", (e) => {
   if (flag) {
     const dis = e.clientX - oLeft;
-    if (dis >= dis - 2 && dis <= dis + 2) {
+    if (dis >= 710 && dis <= 716) {
       captcha.classList.add("passed");
     } else {
       captcha.style.setProperty("--moved", "0px");
