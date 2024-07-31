@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>伸缩搜索框</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: steelblue;
+      }
+
+      .search-bar {
+        height: 60px;
+        width: 60px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        border-radius: 60px;
+        position: relative;
+        overflow: hidden;
+        transition: 0.5s;
+      }
+
+      .change-width {
+        width: 400px;
+      }
+
+      .icon {
+        height: 60px;
+        width: 60px;
+        background-color: #fff;
+        border-radius: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      .icon::before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 3px solid steelblue;
+        position: absolute;
+        transform: translate(-4px, -4px);
+      }
+
+      .icon::after {
+        content: "";
+        width: 3px;
+        height: 15px;
+        background-color: steelblue;
+        transform: translate(7px, 7px) rotate(315deg);
+      }
+
+      .text-input {
+        width: 320px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 60px;
+      }
+
+      .text-input input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        font-size: 16px;
+      }
+
+      .clear {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        right: 22%;
+        top: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .clear::before {
+        content: "";
+        width: 1px;
+        height: 15px;
+        background-color: #999;
+        transform: rotate(45deg);
+        position: absolute;
+      }
+
+      .clear::after {
+        content: "";
+        width: 1px;
+        height: 15px;
+        background-color: #999;
+        transform: rotate(315deg);
+      }
+
+      #go {
+        width: 12%;
+        height: 60%;
+        position: absolute;
+        top: 22%;
+        right: 0;
+        border-radius: 8px;
+        color: #fff;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+        background: linear-gradient(skyblue, deepskyblue);
+      }
+
+      #go:hover {
+        cursor: pointer;
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search-bar">
+      <div class="icon"></div>
+      <div class="text-input">
+        <input type="text" placeholder="search..." />
+        <input type="submit" value="go" id="go" />
+        <div class="clear"></div>
+      </div>
+    </div>
+    <script>
+      let $ = (tag) => {
+        return document.querySelector(tag);
+      };
+
+      let searchBar = $(".search-bar");
+      let icon = $(".icon");
+
+      let clear = $(".clear");
+      let input = $("input[type='text']");
+
+      icon.addEventListener("click", () => {
+        searchBar.classList.toggle("change-width");
+      });
+
+      clear.addEventListener("click", () => {
+        input.value = "";
+      });
+    </script>
+  </body>
+</html>
