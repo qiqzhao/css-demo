@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>键盘风格方框</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #cfd1e1;
+        overflow: hidden;
+      }
+
+      label {
+        width: 120px;
+        height: 60px;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      label::before {
+        width: 60%;
+        height: 4px;
+        background-color: #444;
+        content: "";
+        border-radius: 4px;
+        position: absolute;
+      }
+
+      label input {
+        position: absolute;
+        appearance: none;
+      }
+
+      #icon {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        left: 0;
+        transform-origin: 0.5s;
+      }
+
+      label input:checked ~ #icon {
+        left: 60px;
+      }
+
+      #icon::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 100%;
+        background: linear-gradient(#fff, #fff, #e3e3e3);
+        filter: blur(1px);
+        z-index: 1;
+      }
+      #icon::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -1px;
+        width: 10px;
+        height: 100%;
+        background: #9d9d9d;
+        filter: blur(1px);
+      }
+
+      #iconBox {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#dbdae1, #a3aaba);
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1),
+          15px 15px 15px rgba(0, 0, 0, 0.1), 20px 20px 15px rgba(0, 0, 0, 0.1),
+          30px 30px 15px rgba(0, 0, 0, 0.1), inset 1px 1px 2px #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #shadow {
+        position: absolute;
+        top: 30px;
+        left: -12px;
+        width: 85px;
+        height: 300px;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.1),
+          transparent,
+          transparent
+        );
+        transform-origin: top;
+        transform: rotate(315deg);
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <label>
+      <input type="checkbox" />
+      <div id="icon">
+        <div id="shadow"></div>
+        <div id="iconBox">
+          <div id="cir"></div>
+          <div id="hh"></div>
+        </div>
+      </div>
+    </label>
+  </body>
+</html>
