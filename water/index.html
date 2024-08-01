@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>water</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #262626;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #water h1 {
+        font-size: 10em;
+        color: rgba(255, 255, 255, 0.1);
+        background: url(./water.png) repeat-x;
+        background-clip: text;
+        animation: animate 12s linear infinite;
+      }
+
+      @keyframes animate {
+        0% {
+          background-position: left 0px top 80px;
+        }
+        40% {
+          background-position: left 800px top -50px;
+        }
+        80% {
+          background-position: left 1800px top -50px;
+        }
+        100% {
+          background-position: left 2400px top 80px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="water">
+      <h1>WATER</h1>
+    </div>
+  </body>
+</html>
