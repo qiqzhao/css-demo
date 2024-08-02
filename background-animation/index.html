@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>背景动效</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        height: 100vh;
+        background: linear-gradient(
+          125deg,
+          #2e3e50,
+          #27ae60,
+          #2980b9,
+          #e74c3c,
+          #8e44ad
+        );
+
+        background-size: 400%;
+        animation: bgmove 5s linear infinite;
+      }
+
+      @keyframes bgmove {
+        0% {
+          background-position: 0 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0 100%;
+        }
+      }
+    </style>
+  </head>
+  <body></body>
+</html>
