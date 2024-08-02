@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>开关按钮</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #ececec;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      input[type="checkbox"] {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        appearance: none;
+        box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+          10px 10px 15px rgba(70, 70, 70, 0.12);
+        border-radius: 50%;
+        border: 8px solid #ececec;
+        outline: none;
+      }
+
+      #main {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+      }
+
+      #cir {
+        width: inherit;
+        height: inherit;
+        background-color: transparent;
+        clip-path: polygon(
+          50% 50%,
+          65% 0%,
+          100% 0%,
+          100% 100%,
+          0% 100%,
+          0% 0%,
+          35% 0%
+        );
+        border-radius: 50%;
+        border: 8px solid #7a7a7a;
+        position: absolute;
+      }
+
+      #hh {
+        width: 8px;
+        height: 40px;
+        border-radius: 5px;
+        background-color: #7a7a7a;
+        position: absolute;
+        left: 41%;
+        top: -20px;
+        transform: translateX(50%);
+      }
+
+      input[type="checkbox"]:checked {
+        box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+          10px 10px 15px rgba(255, 255, 255, 0.12),
+          inset -15px -15px 15px rgba(255, 255, 255, 0.5),
+          inset 15px 15px 15px rgba(255, 255, 255, 0.12);
+      }
+
+      input[type="checkbox"]:checked ~ #main #cir {
+        border: 8px solid #15e38a;
+      }
+      input[type="checkbox"]:checked ~ #main #hh {
+        background-color:  #15e38a;
+      }
+
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" />
+    <div id="main">
+      <div id="cir"></div>
+      <div id="hh"></div>
+    </div>
+  </body>
+</html>
