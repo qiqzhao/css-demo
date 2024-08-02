@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>按钮</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #efeeee;
+      }
+
+      .img {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        box-shadow: 18px 18px 18px rgba(0, 0, 0, 0.2),
+          -18px -18px 30px rgba(255, 255, 255, 1);
+        transition: all 0.2s ease-out;
+      }
+
+      .img:hover {
+        cursor: pointer;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 rgba(255, 255, 255, 0.8),
+          inset 18px 18px 18px rgba(0, 0, 0, 0.1),
+          inset -18px -18px 30px rgba(255, 255, 255, 1);
+      }
+
+      img {
+        width: 60px;
+      }
+
+      .img:hover img {
+        width: 58px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img">
+      <img src="../assets/1.JPG" alt="img" />
+    </div>
+  </body>
+</html>
