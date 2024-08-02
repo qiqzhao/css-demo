@@ -1,11 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>返回顶部 js</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>返回顶部 js</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100vw;
+        background-color: cadetblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      div {
+        width: 110px;
+        height: 40px;
+        border-radius: 5px;
+        background-color: bisque;
+        text-align: center;
+        line-height: 40px;
+        color: grey;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="../assets/1.JPG" alt="" />
+    <img src="../assets/10.PNG" alt="" />
+    <img src="../assets/9.PNG" alt="" />
+    <img src="../assets/8.PNG" alt="" />
+    <img src="../assets/7.JPG" alt="" />
+    <div>回到顶部</div>
+
+    <script>
+      let div = document.querySelector("div");
+      div.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
 </html>
