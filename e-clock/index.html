@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>电子时钟</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ececec;
+        background-size: cover;
+      }
+
+      #main {
+        width: 900px;
+        height: 300px;
+        line-height: 300px;
+        text-align: center;
+        background-color: #ececec;
+        border-radius: 70px;
+        box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.5),
+          10px 10px 20px rgba(70, 70, 70, 0.12);
+      }
+
+      #clock {
+        font-size: 200px;
+        -webkit-text-stroke: 3px #fff;
+        color: #000;
+        letter-spacing: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="clock">12:00:00</div>
+    </div>
+
+    <script>
+      let clock = document.querySelector("#clock");
+
+      let addZero = (num) => {
+        if (num >= 10) {
+          return num;
+        }
+        return `0${num}`;
+      };
+
+      let updateTime = () => {
+        let now = new Date();
+        let time =
+          addZero(now.getHours()) +
+          ":" +
+          addZero(now.getMinutes()) +
+          ":" +
+          addZero(now.getSeconds());
+
+        clock.innerText = time;
+      };
+      updateTime();
+      setInterval(updateTime, 1000);
+    </script>
+  </body>
+</html>
