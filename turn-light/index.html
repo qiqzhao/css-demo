@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>开关灯</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #000;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .bulb {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: radial-gradient(#000 50%, #bcbaba);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: -2;
+      }
+
+      #stave {
+        width: 25px;
+        height: 125px;
+        background-color: #686868;
+        border-radius: 5px 5px 0 0;
+        position: absolute;
+        margin-top: 55px;
+        z-index: -1;
+      }
+
+      polyline {
+        fill: transparent;
+        stroke: #95a5a6;
+        stroke-width: 3;
+      }
+
+      .base {
+        width: 86px;
+        height: 65px;
+        background-color: cadetblue;
+        margin-top: -10px;
+        cursor: pointer;
+      }
+
+      .bar {
+        width: 95px;
+        height: 7px;
+        background-color: #bcbaba;
+        border-radius: 5px;
+        transform: translate(-4px, 6px) rotate(-6deg);
+      }
+
+      .bar:nth-child(2) {
+        transform: translate(-4px, 23px) rotate(-6deg);
+      }
+
+      .bar:nth-child(3) {
+        transform: translate(-4px, 38px) rotate(-6deg);
+      }
+
+      .basecup {
+        width: 20px;
+        height: 17px;
+        background-color: cadetblue;
+        border-radius: 0 0 10px 10px;
+        margin: 43px auto;
+      }
+
+      #on-off:checked ~ .bulb {
+        background: radial-gradient(#cbc6c6 30%, #fff000);
+        filter: drop-shadow(0 0 50px #eede82);
+      }
+
+      #on-off:checked ~ .bulb polyline {
+        stroke: #f2f0e6;
+      }
+
+      #on-off:checked ~ .bulb #stave {
+        background-color: #d0c89f;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" id="on-off" style="display: none" />
+    <div class="bulb">
+      <div id="stave"></div>
+      <svg width="80" height="150">
+        <polyline points="60,35 0,50 80,65 0,80 80,95 0,110 80,,125 20,140" />
+      </svg>
+    </div>
+    <label for="on-off" class="base">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="basecup"></div>
+    </label>
+  </body>
+</html>
