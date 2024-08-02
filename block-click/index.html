@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>点击显示方块</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        color: #fff;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      a {
+        width: 300px;
+        height: 40px;
+        background-color: steelblue;
+        text-align: center;
+        line-height: 40px;
+      }
+
+      #cont {
+        width: 300px;
+        height: 300px;
+        background-color: tomato;
+        display: none;
+      }
+
+      #a2 {
+        display: none;
+      }
+
+      #cont:target,
+      #cont:target ~ #a2 {
+        display: block;
+      }
+
+      #cont:target ~ #a1 {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cont"></div>
+    <a href="#cont" id="a1">显示方框</a>
+    <a href="" id="a2">关闭方框</a>
+  </body>
+</html>
