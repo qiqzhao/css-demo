@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>loading</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .svg {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+      }
+
+      .circle {
+        stroke-dasharray: 629;
+        stroke-dashoffset: 629;
+        /* transition: .2s; */
+      }
+    </style>
+  </head>
+  <body>
+    <svg width="300" height="300" class="svg">
+      <circle
+        class="circle"
+        cx="150"
+        cy="150"
+        r="100"
+        fill="transparent"
+        stroke-width="12"
+        stroke="grey"
+      />
+
+      <text
+        x="150"
+        y="150"
+        font-size="24"
+        fill="grey"
+        text-anchor="middle"
+        alignment-baseline="middle"
+      >
+        0%
+      </text>
+    </svg>
+
+    <script>
+      let circle = document.querySelector("circle");
+      let text = document.querySelector("text");
+      let l = circle.getTotalLength();
+      let loadingArr = [];
+      for (let i = 0; i < 100; i++) {
+        loadingArr.push(i);
+      }
+
+      let index = 0;
+      let timer = setInterval(() => {
+        circle.style.strokeDashoffset = l - l * (loadingArr[index] / 100);
+        text.textContent = `${loadingArr[index]}%`;
+        index++;
+        if (index === loadingArr.length) {
+          clearInterval(timer);
+          text.textContent = `加载完毕`;
+        }
+      }, 80);
+    </script>
+  </body>
+</html>
