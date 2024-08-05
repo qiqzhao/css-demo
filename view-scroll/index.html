@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>视差滚动</title>
+    <style>
+      body {
+        margin: 0;
+        height: 0;
+      }
+      #content {
+        width: 100vw;
+        height: auto;
+      }
+
+      section {
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        background-attachment: fixed;
+      }
+
+      .content {
+        width: 45vw;
+        height: 30vh;
+        border: 2px solid #ccc;
+        color: #fff;
+        font-size: 20px;
+      }
+
+      #img1 {
+        background-image: url(../assets/1.JPG);
+      }
+      #img2 {
+        background-image: url(../assets/2.jpeg);
+      }
+      #img3 {
+        background-image: url(../assets/3.PNG);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <section class="img" id="img1">
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto
+            ipsum labore ducimus accusamus consequatur ratione delectus, ut
+            sequi illo? Laborum.
+          </p>
+        </div>
+      </section>
+      <section class="img" id="img2">
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto
+            ipsum labore ducimus accusamus consequatur ratione delectus, ut
+            sequi illo? Laborum.
+          </p>
+        </div>
+      </section>
+      <section class="img" id="img3">
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto
+            ipsum labore ducimus accusamus consequatur ratione delectus, ut
+            sequi illo? Laborum.
+          </p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
