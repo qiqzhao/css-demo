@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>轮播 js</title>
+    <style>
+      body {
+        --iwidth: 100px;
+        --iheight: 100px;
+
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #img {
+        width: var(--iwidth);
+        height: var(--iheight);
+        box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      #main {
+        display: flex;
+        position: absolute;
+        left: 0;
+        gap: 10px;
+      }
+
+      #main div {
+        width: var(--iwidth);
+        height: var(--iheight);
+        border-radius: 10px;
+      }
+
+      #img1 {
+        background-color: steelblue;
+      }
+
+      #img2 {
+        background-color: tomato;
+      }
+
+      #img3 {
+        background-color: peru;
+      }
+
+      #img4 {
+        background-color: gray;
+      }
+
+      #mask {
+        display: flex;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="img">
+      <div id="main">
+        <div id="img1"></div>
+        <div id="img2"></div>
+        <div id="img3"></div>
+        <div id="img4"></div>
+      </div>
+    </div>
+    <div id="mask">
+      <div id="l_mask">
+        <span class="button"> &lt;</span>
+      </div>
+      <div id="r_mask">
+        <span class="button"> &gt;</span>
+      </div>
+    </div>
+    <script>
+      let main = document.querySelector("#main");
+      let mask = document.querySelector("#mask");
+      let img = document.querySelectorAll("#main div");
+      let button = document.querySelectorAll("span");
+
+      let speed = -1;
+
+      main.innerHTML += main.innerHTML;
+
+      let move = () => {
+        if (main.offsetLeft < -main.offseWidth / 2) {
+          main.style.left = "0px";
+        }
+        if (main.offsetLeft > 0) {
+          main.style.left = -main.offseWidth / 2 + "px";
+        }
+
+        main.style.left = main.offsetLeft + speed + "px";
+      };
+
+      let timer = setInterval(move, 30);
+
+      mask.addEventListener("mouseover", () => {
+        clearInterval(timer);
+      });
+
+      mask.addEventListener("mouseout", () => {
+        timer = setInterval(move, 30);
+      });
+
+      button[0].onclick = () => {
+        speed = -1;
+      }
+
+      button[1].onclick = () => {
+        speed = 1;
+      }
+    </script>
+  </body>
+</html>
