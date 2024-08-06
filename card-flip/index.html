@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>卡片翻转</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: steelblue;
+        perspective: 1000px;
+      }
+      #s_img {
+        width: 100px;
+        height: 200px;
+        transform-style: preserve-3d;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0);
+        backface-visibility: hidden;
+        transition: 2s;
+      }
+
+      #a2 {
+        transform: rotateY(180deg);
+      }
+
+       #s_img:hover #a2 {
+        transform: rotateY(0deg);
+      }
+
+       #s_img:hover #a1 {
+        transform: rotateY(-180deg);
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="s_img">
+      <img src="../assets/1.JPG" id="a1" alt="" />
+      <img src="../assets/10.PNG" id="a2" alt="" />
+    </div>
+  </body>
+</html>
