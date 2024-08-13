@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文字聚光灯</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #222;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      
+      h1 {
+        color: #333;
+        font-size: 8rem;
+        letter-spacing: -0.3rem;
+        position: relative;
+      }
+
+      h1::after {
+        content: attr(data-text);
+        color: steelblue;
+        position: absolute;
+        left: 0;
+        top: 0;
+        clip-path: circle(100px at 50% 50%);
+        animation: moveLight 5s infinite;
+      }
+
+      @keyframes moveLight {
+        0% {
+          clip-path: circle(100px at 0% 50%);
+        }
+
+        50% {
+          clip-path: circle(100px at 100% 50%);
+        }
+
+        100% {
+          clip-path: circle(100px at 100% 100%);
+        }
+        
+      }
+    </style>
+  </head>
+  <body>
+    <h1 data-text="Hello World">Hello World</h1>
+  </body>
+</html>
