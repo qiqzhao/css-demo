@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>轮播图——跟随鼠标</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #pic {
+        width: 480px;
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      img {
+        display: block;
+        position: absolute;
+        width: 480px;
+        height: 300px;
+        z-index: -999;
+      }
+
+      .img0 {
+        top: -300px;
+        left: 0;
+        transition-delay: 0.5s;
+      }
+      .img1 {
+        top: 0;
+        left: 480px;
+        transition-delay: 0.5s;
+      }
+
+      .img2 {
+        top: 300px;
+        left: 0;
+        transition-delay: 0.5s;
+      }
+
+      .img3 {
+        top: 0;
+        left: -480px;
+        transition-delay: 0.5s;
+      }
+
+      .img {
+        top: 0;
+        left: 0;
+        transition: 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="pic">
+      <img src="../assets/1.JPG" alt="img" class="img" />
+      <img src="../assets/2.jpeg" alt="img1" class="img1" />
+      <img src="../assets/3.PNG" alt="img2" class="img2" />
+      <img src="../assets/4.PNG" alt="img3" class="img3" />
+      <svg style="width: 480px; height: 300px">
+        <polygon points="0,0 480,0 360,100 120,100" style="fill: transparent" />
+        <polygon
+          points="480,0 480,300 360,200 360,100"
+          style="fill: transparent"
+        />
+        <polygon
+          points="480,300 0,300 120,200 360,200"
+          style="fill: transparent"
+        />
+        <polygon points="0,300 0,0 120,100 120,200" style="fill: transparent" />
+      </svg>
+    </div>
+    <script>
+      let pol = document.querySelectorAll("polygon");
+      let pic = document.querySelectorAll("img");
+      let aPic = [].slice.apply(pic);
+
+      let zIndex = -998;
+      let picBack = (index) => {
+        delete aPic[index];
+        aPic.forEach((val, key) => {
+          if (aPic[key].classList.contains("img")) {
+            aPic[key].className = `img${key}`;
+          }
+        });
+        aPic = [].slice.apply(pic);
+      };
+
+      pol.forEach((item, index) => {
+        item.addEventListener("mouseover", () => {
+          zIndex++;
+          pic[index].className = "img";
+          pic[index].zIndex = zIndex;
+          picBack(index);
+        });
+      });
+    </script>
+  </body>
+</html>
