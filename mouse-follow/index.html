@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>鼠标跟随</title>
+    <link rel="stylesheet" href="../icon/iconfont.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        background: linear-gradient(200deg, #005bea, #00c6fb);
+      }
+
+      .rocket {
+        color: #fff;
+        font-size: 28px;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="iconfont icon-huojian rocket"></span>
+
+    <script>
+      let rocket = document.querySelector(".rocket");
+      let deg = 0,
+        ex = 0,
+        ey = 0,
+        vx = 0,
+        vy = 0,
+        count = 0;
+
+      window.addEventListener("mousemove", (e) => {
+        ex = e.x - rocket.offsetLeft - rocket.clientWidth / 2;
+        ey = e.y - rocket.offsetTop - rocket.clientHeight / 2;
+        deg = (Math.atan(ey / ex) / (2 * Math.PI)) * 360 + 45;
+        if (ex < 0) {
+          deg += 180;
+        }
+        count = 0;
+      });
+
+      function move() {
+        rocket.style.transform = `rotate(${deg}deg)`;
+        if (count < 100) {
+          vx += ex / 100;
+          vy += ey / 100;
+        }
+        rocket.style.left = vx + "px";
+        rocket.style.top = vy + "px";
+        count++;
+      }
+
+      setInterval(move, 10);
+    </script>
+  </body>
+</html>
