@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>打字效果</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: monospace;
+        background-color: #454545;
+        color: #fff;
+      }
+
+      h1 {
+        position: relative;
+      }
+
+      h1::after,
+      h1::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+      }
+
+      h1::before {
+        background-color: #454545;
+        animation: typing 3s infinite steps(16) 500ms forwards,
+          delete 2s steps(10) 4.5s forwards;
+      }
+
+      h1::after {
+        width: 2px;
+        background-color: #000;
+        animation: typing 3s infinite steps(16) 500ms forwards,
+          belink 500ms infinite, delete 2s steps(10) 4.5s forwards;
+      }
+
+      @keyframes delete {
+        from {
+          left: 100%;
+        }
+        to {
+          left: 6ch;
+        }
+      }
+
+      @keyframes belink {
+        from,
+        to {
+          background: transparent;
+        }
+
+        50% {
+          background: #fff;
+        }
+      }
+
+      @keyframes typing {
+        to {
+          left: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>sorry， I'm wrong</h1>
+  </body>
+</html>
